@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on blog</title>
+    <link>http://neilmenne.com/categories/development/</link>
+    <description>Recent content in Development on blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Mar 2019 21:01:48 -0400</lastBuildDate>
+    
+	<atom:link href="http://neilmenne.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maestro and Ecto 3</title>
+      <link>http://neilmenne.com/posts/maestro-and-ecto-3/</link>
+      <pubDate>Sun, 10 Mar 2019 21:01:48 -0400</pubDate>
+      
+      <guid>http://neilmenne.com/posts/maestro-and-ecto-3/</guid>
+      <description>Introduction Like many blogs in our profession, I begin by focusing on a particular set of technologies Elixir, Ecto 3, and maestro such that this article is doomed to inevitable obsolescence. Nevertheless, it is a great place for me to start as it is focused on things that I am actively developing on now and interested in working on/with for the foreseeable future. Enough with the character development&amp;hellip; On to the software development!</description>
+    </item>
+    
+  </channel>
+</rss>
