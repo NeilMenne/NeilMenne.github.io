@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.54.0" />
+
+    
+    
+    
+
+<title>Getting Started With Maestro • blog</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting Started With Maestro"/>
+<meta name="twitter:description" content="Introduction Dusting off Maestro for a brand new project has reminded me that posts like this one and the ones to follow are absolutely necessary. Differentiating Maestro from the other alternatives out there is only part of the goal for today. The other part is to explain a bit about why I decided to build it all. I&rsquo;ll finish the post off by adding it to an existing Phoenix project."/>
+
+<meta property="og:title" content="Getting Started With Maestro" />
+<meta property="og:description" content="Introduction Dusting off Maestro for a brand new project has reminded me that posts like this one and the ones to follow are absolutely necessary. Differentiating Maestro from the other alternatives out there is only part of the goal for today. The other part is to explain a bit about why I decided to build it all. I&rsquo;ll finish the post off by adding it to an existing Phoenix project." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://NeilMenne.github.io/posts/getting-started-with-maestro/" />
+<meta property="article:published_time" content="2019-04-21T15:33:07-04:00"/>
+<meta property="article:modified_time" content="2019-04-21T15:33:07-04:00"/>
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6eed07f5043994c45c3556a42653077de59fb89f353e72920ecdfa0b01f48d8f.css" integrity="sha256-bu0H9QQ5lMRcNVakJlMHfeWfuJ81PnKSDs36CwH0jY8=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://NeilMenne.github.io">blog</a>
+      </span>
+      
+      
+        <div class="author-image">
+          <img src="https://www.gravatar.com/avatar/b181faf45e228796a5d3c6d9646b4c26?s=240&d=mp" class="img--circle img--headshot element--center" alt="gravatar">
+        </div>
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">blog</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/neilmenne" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/NeilMenne" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/nmenne" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	<a href="https://keybase.io/neilmenne" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Getting Started With Maestro</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 21, 2019
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/development">development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/elixir">elixir</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 8 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Dusting off Maestro for a brand new project has reminded me that posts like this
+one and the ones to follow are absolutely necessary. Differentiating Maestro
+from the other alternatives out there is only part of the goal for today. The
+other part is to explain a bit about why I decided to build it all. I&rsquo;ll finish
+the post off by adding it to an existing
+<a href="https://phoenixframework.org/">Phoenix</a> project.</p>
+
+<h1 id="why-did-you-make-maestro">Why did you make Maestro?</h1>
+
+<p>An excellent question that I get asked by business people and developers alike.
+It seems anyone with a long afternoon and a headfull of
+<a href="https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS</a>, <a href="https://martinfowler.com/eaaDev/EventSourcing.html">Event
+Sourcing</a>, and/or
+<a href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215">Domain-Driven
+Design</a>
+knowledge can make an event sourcing library; if they&rsquo;ve got a long weekend,
+they can even get started on a CQRS framework. I agree! In Elixir alone, there are
+more than a handful as seen
+<a href="https://github.com/slashdotdash/awesome-elixir-cqrs#libraries">here</a>. The most
+note-worthy and comprehensive implementation is
+<a href="https://github.com/commanded/commanded">Commanded</a>, and if we had been going
+all-in on DDD (and maybe we should have), Commanded would&rsquo;ve been the right
+choice.</p>
+
+<p>Maestro is decidedly not a CQRS framework; it is an opionated library for
+implementing an event sourced application. The idea began at Strange Loop &lsquo;16
+after viewing <a href="https://www.youtube.com/watch?v=B1-gS0oEtYc">Bobby Calderwood&rsquo;s
+talk</a> on
+<a href="https://github.com/capitalone/cqrs-manager-for-distributed-reactive-services">Commander</a>.
+I learned everything I could from the resources above and many more. I watched
+talks and discussed design ideas with coworkers, but the project that was
+driving the early designs was shelved before we had more than a prototype.</p>
+
+<p>Fast-forward to my Pylon years. We&rsquo;d successfully <a href="https://medium.com/navigating-the-conversation/yet-another-why-my-company-chose-elixir-story-a5f5bef286f">migrated from Python to
+Elixir</a>,
+and I had taken a project that required an audit log of changes, a way to
+recover previously published versions, and a large (and growing) number of
+mutations for a complicated and deep model. Event sourcing was a great fit, and
+we knew exactly where our boundaries were.</p>
+
+<h1 id="what-sets-it-apart">What sets it apart?</h1>
+
+<p>All of my efforts were focused on consistency and the relationship between
+command processing and event application. Our problem didn&rsquo;t require a lot of
+the extra machinery that comes with a more comprehensive CQRS framework; things
+like process managers, asynchronous event busses, eventually consistent
+projections, etc. were all things that would&rsquo;ve just detracted. With
+the exception of indices for finding/retrieving an aggregate, our query side
+views are updated rarely and only after an extensive publication/validation
+process that made even an event bus unnecessary. Practically speaking, the
+aggregate&rsquo;s data model (or at least subsets of it) were precisely the model we
+wanted to expose to the client.</p>
+
+<p>Since we were using Elixir, the <code>GenServer</code> as a command processor/aggregate
+root just made sense. The goal was to make the library do one thing and do it
+well. Maestro handles the logical operation of taking a command, finding your
+command handler code, evaluating it against an up-to-date aggregate, and taking
+any generated events and committing them to the log.</p>
+
+<p>Even the limited way we handle projections is toward this goal, we only
+accommodate projections that are executed within the same transaction that
+commits the events.</p>
+
+<h3 id="sequence-numbers">Sequence Numbers</h3>
+
+<p>One of the simpler things that sets it apart from a CQRS framework is the
+sequence number. For any given aggregate, the sequence number is monotonic, and
+no conflicts are allowed. This means that every instance of the aggregate root
+will process events in the exact same order. With respect to an individual
+aggregate, the set of events is totally ordered.</p>
+
+<p>This is accomplished by a <a href="https://github.com/toniqsystems/maestro/blob/cc956c0dc17fc584c7fe4903adea9f0e4cdd2207/lib/mix/tasks/maestro.create.event_store_migration.ex#L44">uniqueness constraint at the
+database</a>.
+To make it easier to use, the library manages updating sequence numbers
+per-event as part of the pre-commit step. You don&rsquo;t have to think about it. You
+just create events that are populated with the type, id, and data that are your
+responsibility anyway.</p>
+
+<p>What does this mean for you? If you&rsquo;re using Maestro to build an aggregate, two
+partitioned nodes (who can still see the datastore) are able to make
+independent progress that doesn&rsquo;t violate consistency. You get to write your
+command and event handlers like they were running on one machine.</p>
+
+<h3 id="hybrid-logical-clocks-and-causality">Hybrid Logical Clocks and Causality</h3>
+
+<p>A more particular differentiating factor is the use of the Hybrid Logical Clock
+(more specifically the variant provided by
+<a href="https://github.com/toniqsystems/hlclock">HLClock</a>) and its form of timestamps.
+We use them in a couple of places for a couple of reasons. If you are unfamiliar
+with the HLC, an excellent writeup is available with examples is <a href="http://sergeiturukin.com/2017/06/26/hybrid-logical-clocks.html">available
+here</a>.</p>
+
+<p>The first and simplest use case is as a replacement for traditional timestamps
+in the event log. Since <code>HLClock</code>&rsquo;s timestamps include node identification
+information, you can use this information for debugging or even sorting events
+to create a single, consistently ordered view of all the events across
+aggregates.</p>
+
+<p>The second use case is as the aggregate ID. Unlike a traditional UUID, this
+intentionally embeds causal information about which node was responsible for
+creating the aggregate.</p>
+
+<p>In both cases, alternatives exist and could be used. <code>DateTime</code>s are sufficient
+with respect to the single aggregate event log since the sequence number
+controls the ordering. UUIDs are also sufficient for creating IDs that are
+unique. HLC timestamps do <em>just a little bit</em> more to help in reasoning about
+how/when failures happen, so it was worth the investment.</p>
+
+<h1 id="how-do-i-use-it">How do I use it?</h1>
+
+<p>To thoroughly demonstrate this library and some advanced use cases, we&rsquo;re going
+to build a graph editor; it&rsquo;s a project that&rsquo;s always been interesting to me,
+and there are some personal and work projects that are adjacent enough to a
+generic graph editor that I should be able to stay motivated for whole hours -
+possibly longer.</p>
+
+<ul>
+<li>Add maestro to your dependencies: <code>{:maestro, &quot;~&gt; 0.3&quot;}</code> and <code>mix deps.get</code></li>
+<li>Create the migration for events and snapshots: <code>mix maestro.create_event_store_migration</code></li>
+<li>Configure Maestro minimally: <code>config :maestro, storage_adapter: Maestro.Store.Postgres, repo: Bramble.Repo</code></li>
+</ul>
+
+<p>Here you can see <code>Graph</code> which implements the minimal callbacks for handling
+state/snapshots of a well-behaved <code>Maestro.Aggregate.Root</code>. Everything else is
+done via commands and events. To start with, there are only the <code>CreateGraph</code>,
+<code>AddNode</code>, <code>AddEdge</code> commands and their respective <code>GraphCreated</code>, <code>NodeAdded</code>
+and <code>EdgeAdded</code> events. Finally, the projection used to instantiate the index of
+name to aggregate IDs is shown as well at <code>GraphOperations</code>.</p>
+
+<p>The aggregate simply implements the minimal callbacks to get things wired:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Bramble.Graph</span> do
+  <span style="color:#a6e22e">@moduledoc</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">  Currently, a named collection of nodes and edges with minimal validation on
+</span><span style="color:#e6db74">  what any of these things are since we&#39;re not sure what the requirements are
+</span><span style="color:#e6db74">  yet.
+</span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
+
+  use <span style="color:#a6e22e">Maestro.Aggregate.Root</span>,
+    <span style="color:#e6db74">command_prefix</span>: <span style="color:#a6e22e">Bramble.Graph.Commands</span>,
+    <span style="color:#e6db74">event_prefix</span>: <span style="color:#a6e22e">Bramble.Graph.Events</span>
+
+  alias <span style="color:#a6e22e">Bramble.Repo</span>
+
+  alias <span style="color:#a6e22e">Maestro.Types.Snapshot</span>
+
+  <span style="color:#a6e22e">@type</span> model <span style="color:#f92672">::</span> %{
+    <span style="color:#e6db74">name</span>: <span style="color:#a6e22e">String</span><span style="color:#f92672">.</span>t(),
+    <span style="color:#e6db74">nodes</span>: [node <span style="color:#f92672">::</span> <span style="color:#a6e22e">String</span><span style="color:#f92672">.</span>t()],
+    <span style="color:#e6db74">edges</span>: %{(source_id <span style="color:#f92672">::</span> <span style="color:#a6e22e">String</span><span style="color:#f92672">.</span>t()) <span style="color:#f92672">=&gt;</span> (dest_id <span style="color:#f92672">::</span> <span style="color:#a6e22e">String</span><span style="color:#f92672">.</span>t())},
+    <span style="color:#e6db74">inserted_at</span>: <span style="color:#a6e22e">DateTime</span><span style="color:#f92672">.</span>t() <span style="color:#f92672">|</span> nil
+  }
+
+  def initial_state do
+    %{<span style="color:#e6db74">name</span>: <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">nodes</span>: [], <span style="color:#e6db74">edges</span>: %{}, <span style="color:#e6db74">inserted_at</span>: nil}
+  end
+
+  def prepare_snapshot(state), <span style="color:#e6db74">do</span>: state
+
+  def use_snapshot(_curr, %<span style="color:#a6e22e">Snapshot</span>{<span style="color:#e6db74">body</span>: state}) do
+    <span style="color:#a6e22e">Map</span><span style="color:#f92672">.</span>new(state, fn {k, v} <span style="color:#f92672">-&gt;</span>
+      {<span style="color:#a6e22e">String</span><span style="color:#f92672">.</span>to_existing_atom(k), v}
+    end)
+  end
+end</code></pre></div>
+
+<p>As an example of minimal effort for commands (useful when you&rsquo;re just trying to
+get things moving), the <code>CreateGraph</code> command does not validate since the
+projection (which is executed transactionally with the commit of the
+<code>GraphCreated</code> event) will be used to ensure that no duplicate names exist.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Bramble.Graph.Commands.CreateGraph</span> do
+  <span style="color:#a6e22e">@moduledoc</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">  Graphs are unique by name for simplicity
+</span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
+
+  <span style="color:#a6e22e">@behaviour</span> <span style="color:#a6e22e">Maestor.Aggregate.CommandHandler</span>
+
+  alias <span style="color:#a6e22e">Maestro.Types.Event</span>
+
+  <span style="color:#a6e22e">@type</span> aggregate <span style="color:#f92672">::</span> <span style="color:#a6e22e">Maestro.Aggregate.Root</span><span style="color:#f92672">.</span>t
+  <span style="color:#a6e22e">@type</span> command <span style="color:#f92672">::</span> <span style="color:#a6e22e">Maestro.Types.Command</span><span style="color:#f92672">.</span>t
+  <span style="color:#a6e22e">@type</span> event <span style="color:#f92672">::</span> <span style="color:#a6e22e">Eventt</span><span style="color:#f92672">.</span>
+
+  def eval(agg, %{<span style="color:#e6db74">data</span>: %{<span style="color:#e6db74">name</span>: graph_name}}) do
+    [
+      %<span style="color:#a6e22e">Event</span>{
+        <span style="color:#e6db74">aggregate_id</span>: agg<span style="color:#f92672">.</span>id,
+        <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;graph_created&#34;</span>,
+        <span style="color:#e6db74">body</span>: %{
+          <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">=&gt;</span> graph_name,
+          <span style="color:#e6db74">&#34;inserted_at&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">DateTime</span><span style="color:#f92672">.</span>utc_now()
+        }
+      }
+    ]
+  end
+end</code></pre></div>
+
+<p>The events are simply updating the aggregate at this point, since we aren&rsquo;t
+maintaining any extra information for the aggregate yet. Of note here, is that
+we <em>always</em> should prepare for the representation that we output in our commands
+<em>and</em> the representation we&rsquo;d expect to see if we were starting from a cold
+state (i.e. events coming from the database).</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Bramble.Graph.Events.GraphCreated</span> do
+  <span style="color:#a6e22e">@moduledoc</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">  Set name and inserted_at
+</span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
+
+  <span style="color:#a6e22e">@behaviour</span> <span style="color:#a6e22e">Maestro.Aggregate.EventHandler</span>
+
+  def apply(state, event) do
+    state
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Map</span><span style="color:#f92672">.</span>put(<span style="color:#e6db74">:name</span>, <span style="color:#a6e22e">Map</span><span style="color:#f92672">.</span>fetch!(event<span style="color:#f92672">.</span>body, <span style="color:#e6db74">&#34;name&#34;</span>))
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Map</span><span style="color:#f92672">.</span>put(<span style="color:#e6db74">:inserted_at</span>, inserted_at(event<span style="color:#f92672">.</span>body))
+  end
+
+  <span style="color:#75715e"># parse the datetime from the event if necessary</span>
+  defp inserted_at(%{<span style="color:#e6db74">&#34;inserted_at&#34;</span> <span style="color:#f92672">=&gt;</span> %<span style="color:#a6e22e">DateTime</span>{} <span style="color:#f92672">=</span> dt}), <span style="color:#e6db74">do</span>: dt
+
+  defp inserted_at(%{<span style="color:#e6db74">&#34;inserted_at&#34;</span> <span style="color:#f92672">=&gt;</span> dt_str}) do
+    {<span style="color:#e6db74">:ok</span>, dt, _offset} <span style="color:#f92672">=</span> <span style="color:#a6e22e">DateTime</span><span style="color:#f92672">.</span>from_iso8601(dt_str)
+
+    dt
+  end
+end</code></pre></div>
+
+<p>Projections are simple to build/extend as well, but it requires
+updating the <code>Graph</code>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Bramble.Graph.Projections.GraphOperations</span> do
+  <span style="color:#a6e22e">@moduledoc</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">  Transactional projections handling properties relating to the graph as a whole
+</span><span style="color:#e6db74">  (i.e. name, rename, delete, etc.)
+</span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
+
+  <span style="color:#a6e22e">@behaviour</span> <span style="color:#a6e22e">Maestro.Aggregate.ProjectionHandler</span>
+
+  alias <span style="color:#a6e22e">Bramble</span><span style="color:#f92672">.</span>{<span style="color:#a6e22e">Graph.Schemas</span>, <span style="color:#a6e22e">Repo</span>}
+
+  def project(%{
+        <span style="color:#e6db74">aggregate_id</span>: agg_id,
+        <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;graph_created&#34;</span>,
+        <span style="color:#e6db74">body</span>: %{<span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">=&gt;</span> gname}
+      }) do
+    <span style="color:#a6e22e">Repo</span><span style="color:#f92672">.</span>insert(%<span style="color:#a6e22e">Schemas.Graph</span>{<span style="color:#e6db74">name</span>: gname, <span style="color:#e6db74">aggregate_id</span>: agg_id})
+  end
+
+  <span style="color:#75715e"># since _all_ projections see _all_ events, we must explicitly skip the ones</span>
+  <span style="color:#75715e"># we&#39;re not interested in</span>
+  def project(_), <span style="color:#e6db74">do</span>: nil
+end</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Bramble.Graph</span> do
+  use <span style="color:#a6e22e">Maestro.Aggregate.Root</span>,
+    <span style="color:#e6db74">command_prefix</span>: <span style="color:#a6e22e">Bramble.Graph.Commands</span>,
+    <span style="color:#e6db74">event_prefix</span>: <span style="color:#a6e22e">Bramble.Graph.Events</span>,
+    <span style="color:#e6db74">projections</span>: [<span style="color:#a6e22e">Bramble.Graph.Projections.GraphOperations</span>]
+
+    ...
+end</code></pre></div>
+
+<h1 id="wrapping-up">Wrapping Up</h1>
+
+<p>Using Maestro is easy. A lot of extra <code>mix</code> tasks could be created to help
+streamline this process (and I would welcome the help should the desire be made
+known), but the somewhat manual nature of setting this all up is intentional as
+these steps are infrequent enough that I haven&rsquo;t found the need for any such
+tooling. I also have a personal policy that automation should be deferred (for
+simple tasks such as these) until you have a clear picture on what you want.</p>
+
+<p>In the near future, we&rsquo;ll explore some more advanced concepts around Maestro
+such as debugging a bad event from the REPL, stricter command/event modeling
+with structs, repurposing events and versioning, and more complicated model
+validation.</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/maestro-and-ecto-3/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Maestro and Ecto 3</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>
