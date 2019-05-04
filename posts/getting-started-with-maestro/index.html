@@ -22,10 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Getting Started With Maestro"/>
-<meta name="twitter:description" content="Introduction Dusting off Maestro for a brand new project has reminded me that posts like this one and the ones to follow are absolutely necessary. Differentiating Maestro from the other alternatives out there is only part of the goal for today. The other part is to explain a bit about why I decided to build it all. I&rsquo;ll finish the post off by adding it to an existing Phoenix project."/>
+<meta name="twitter:description" content="Introduction Dusting off Maestro for a brand new project has reminded me that posts like this one and the ones to follow are absolutely necessary. Differentiating Maestro from the other alternatives out there is only part of the goal for today. The other part is to explain a bit about why I decided to build it at all. I&rsquo;ll finish the post off by adding it to an existing Phoenix project."/>
 
 <meta property="og:title" content="Getting Started With Maestro" />
-<meta property="og:description" content="Introduction Dusting off Maestro for a brand new project has reminded me that posts like this one and the ones to follow are absolutely necessary. Differentiating Maestro from the other alternatives out there is only part of the goal for today. The other part is to explain a bit about why I decided to build it all. I&rsquo;ll finish the post off by adding it to an existing Phoenix project." />
+<meta property="og:description" content="Introduction Dusting off Maestro for a brand new project has reminded me that posts like this one and the ones to follow are absolutely necessary. Differentiating Maestro from the other alternatives out there is only part of the goal for today. The other part is to explain a bit about why I decided to build it at all. I&rsquo;ll finish the post off by adding it to an existing Phoenix project." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://NeilMenne.github.io/posts/getting-started-with-maestro/" />
 <meta property="article:published_time" content="2019-04-21T15:33:07-04:00"/>
@@ -177,8 +177,8 @@
 <p>Dusting off Maestro for a brand new project has reminded me that posts like this
 one and the ones to follow are absolutely necessary. Differentiating Maestro
 from the other alternatives out there is only part of the goal for today. The
-other part is to explain a bit about why I decided to build it all. I&rsquo;ll finish
-the post off by adding it to an existing
+other part is to explain a bit about why I decided to build it at all. I&rsquo;ll
+finish the post off by adding it to an existing
 <a href="https://phoenixframework.org/">Phoenix</a> project.</p>
 
 <h1 id="why-did-you-make-maestro">Why did you make Maestro?</h1>
@@ -354,10 +354,6 @@ projection (which is executed transactionally with the commit of the
 
   alias <span style="color:#a6e22e">Maestro.Types.Event</span>
 
-  <span style="color:#a6e22e">@type</span> aggregate <span style="color:#f92672">::</span> <span style="color:#a6e22e">Maestro.Aggregate.Root</span><span style="color:#f92672">.</span>t
-  <span style="color:#a6e22e">@type</span> command <span style="color:#f92672">::</span> <span style="color:#a6e22e">Maestro.Types.Command</span><span style="color:#f92672">.</span>t
-  <span style="color:#a6e22e">@type</span> event <span style="color:#f92672">::</span> <span style="color:#a6e22e">Eventt</span><span style="color:#f92672">.</span>
-
   def eval(agg, %{<span style="color:#e6db74">data</span>: %{<span style="color:#e6db74">name</span>: graph_name}}) do
     [
       %<span style="color:#a6e22e">Event</span>{
@@ -406,8 +402,8 @@ updating the <code>Graph</code>.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Bramble.Graph.Projections.GraphOperations</span> do
   <span style="color:#a6e22e">@moduledoc</span> <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">  Transactional projections handling properties relating to the graph as a whole
-</span><span style="color:#e6db74">  (i.e. name, rename, delete, etc.)
+</span><span style="color:#e6db74">  Transactional projections handling properties relating to the graph
+</span><span style="color:#e6db74">  as a whole (i.e. name, rename, delete, etc.)
 </span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
 
   <span style="color:#a6e22e">@behaviour</span> <span style="color:#a6e22e">Maestro.Aggregate.ProjectionHandler</span>
@@ -422,8 +418,8 @@ updating the <code>Graph</code>.</p>
     <span style="color:#a6e22e">Repo</span><span style="color:#f92672">.</span>insert(%<span style="color:#a6e22e">Schemas.Graph</span>{<span style="color:#e6db74">name</span>: gname, <span style="color:#e6db74">aggregate_id</span>: agg_id})
   end
 
-  <span style="color:#75715e"># since _all_ projections see _all_ events, we must explicitly skip the ones</span>
-  <span style="color:#75715e"># we&#39;re not interested in</span>
+  <span style="color:#75715e"># since _all_ projections see _all_ events, we must explicitly skip</span>
+  <span style="color:#75715e"># the ones we&#39;re not interested in</span>
   def project(_), <span style="color:#e6db74">do</span>: nil
 end</code></pre></div>
 
